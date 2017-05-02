@@ -1,5 +1,21 @@
 #!/usr/bin/env python
 
+#Enable/Disable/List LCM for a bunch of hosts 
+#Version 1.0
+#
+#USAGE:
+#./lcm_noop.py list_noop all
+#./lcm_noop.py list_noop node-2,node-3,node-4
+#./lcm_noop.py list_noop node-2.test.domain.local,node-3.test.domain.local,node-4.test.domain.local
+
+#./lcm_noop.py enable_noop all
+#./lcm_noop.py enable_noop node-2,node-3,node-4
+#./lcm_noop.py enable_noop node-2.test.domain.local,node-3.test.domain.local,node-4.test.domain.local
+
+#./lcm_noop.py disable_noop all
+#./lcm_noop.py disable_noop node-2,node-3,node-4
+#./lcm_noop.py disable_noop node-2.test.domain.local,node-3.test.domain.local,node-4.test.domain.local
+
 import requests
 from requests.adapters import HTTPAdapter
 import json
@@ -228,6 +244,6 @@ class ForemanNodeBunch():
 if __name__ == "__main__":
     node_bunch = ForemanNodeBunch()
     node_bunch.main(sys.argv[1:])
-    print "Competed"
+    print "Completed"
 #TODO add check of TRUE True true "True" and so on, then FALSE .....
 #TODO add USAGE()
